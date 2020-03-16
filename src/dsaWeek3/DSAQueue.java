@@ -4,33 +4,30 @@ public class DSAQueue {
 
 		//fields and constants
 	Object queue[];
-	int count;
 	public static final int DEFAULT_CAPACITY = 100;
 	
 	DSAQueue() {
 		queue = new Object[DEFAULT_CAPACITY];
-		count = 0;
 	}
 	
 	DSAQueue(int max_capacity) {
 		queue = new Object[max_capacity];
-		count = 0;
 	}
 	
 	
 	//accessors
 	int getCount() {
-		int i;
-		for( i=0; queue[i] == null ; i++ ) {
-			
+		int filledArray=0;
+		for(int i=0; i < queue.length ; i++ ) {
+			if(queue[i] != null)
+				filledArray = filledArray + 1;
 		}
-		return i;
+		return filledArray;
 		
 	}
-	
 	Boolean isEmpty() {
 		boolean empty = false;
-		if (count == 0) {
+		if (getCount() == 0) {
 			empty = true;
 		}
 		return empty;
@@ -38,13 +35,18 @@ public class DSAQueue {
 	
 	Boolean isFull() {
 		boolean full = false;
-		if (count == queue.length) {
+		if (getCount() == queue.length) {
 			full = true;
 		}
-		return full;
-		
+		return full;	
 	}
 	
+	void display() {
+		for (int i = 0; i < queue.length ; i ++) 
+			System.out.println(queue[i]);
+	}
+	//peek() will be inherited by derived class
+	/*
 	Object peek() {
 		Object first;
 		if (isEmpty() == true) {
@@ -56,31 +58,8 @@ public class DSAQueue {
 		}
 		return first;
 	}
+	*/
 	
-	//mutators
-	void enqueue(Object value) {
-		//if ( isFull() != true) {
-			queue[count] = value;
-			count++;
-		//}
-		//else {
-			//ADD EXCEPTION
-			
-		//}
-	}
-	
-	Object dequeue() {
-		Object first = queue[0];
-		if ( isEmpty() !=true) {
-			for(int i = 1; i < queue.length; i++ )
-				queue[i-1] = queue[i];
-			count --;
-		}
-		else {
-			//ADD EXCEPTION
-		}
-		return first;
-	}
 }
 
 

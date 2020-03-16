@@ -1,11 +1,11 @@
 package dsaWeek3;
 
-public class ShufflingQueue {
+public class ShufflingQueue extends DSAQueue {
 
 		//fields and constants
-	Object queue[];
+	//Object queue[];
 	int count;
-	public static final int DEFAULT_CAPACITY = 100;
+	//public static final int DEFAULT_CAPACITY = 100;
 	
 	ShufflingQueue() {
 		queue = new Object[DEFAULT_CAPACITY];
@@ -19,6 +19,7 @@ public class ShufflingQueue {
 	
 	
 	//accessors
+	/*
 	int getCount() {
 		int i;
 		for( i=0; queue[i] == null ; i++ ) {
@@ -44,6 +45,7 @@ public class ShufflingQueue {
 		return full;
 		
 	}
+	*/
 	
 	Object peek() {
 		Object first;

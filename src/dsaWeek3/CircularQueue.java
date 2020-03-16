@@ -1,11 +1,10 @@
 package dsaWeek3;
 
-public class CircularQueue {
+public class CircularQueue extends DSAQueue {
 
 		//fields and constants
-	Object queue[];
+	
 	int head, end;
-	public static final int DEFAULT_CAPACITY = 100;
 	
 	CircularQueue() {
 		queue = new Object[DEFAULT_CAPACITY];
@@ -20,34 +19,7 @@ public class CircularQueue {
 	}
 	
 	
-	//accessors
-	int getCount() {
-		int filledArray=0;
-		for(int i=0; i < queue.length ; i++ ) {
-			if(queue[i] != null)
-				filledArray = filledArray + 1;
-		}
-		return filledArray;
-		
-	}
-	
-	Boolean isEmpty() {
-		boolean empty = false;
-		if (getCount() == 0) {
-			empty = true;
-		}
-		return empty;
-	}
-	
-	Boolean isFull() {
-		boolean full = false;
-		if (getCount() == queue.length) {
-			full = true;
-		}
-		return full;
-		
-	}
-	
+	//accessors	
 	Object peek() {
 		Object first;
 		if (isEmpty() == true) {
@@ -60,10 +32,7 @@ public class CircularQueue {
 		return first;
 	}
 	
-	void display() {
-		for (int i = 0; i < queue.length ; i ++) 
-			System.out.println(queue[i]);
-	}
+	
 	
 	//mutators
 	void enqueue(Object value) {

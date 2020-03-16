@@ -20,20 +20,22 @@ public class Main {
 		System.out.println( stack.top() );
 		*/
 		  
-		  /*
-		  DSAQueue q1 = new DSAQueue();
+		  ///*
+		  ShufflingQueue q1 = new ShufflingQueue(6);
 		  q1.enqueue(1);
 		  q1.enqueue(2);
+		  q1.dequeue();
 		  q1.enqueue(3);
-		  System.out.println( q1.peek() );
+		  q1.enqueue(4);
 		  q1.dequeue();
-		  System.out.println( q1.peek() );
-		  q1.dequeue();
-		  System.out.println( q1.peek() );
-		  q1.dequeue();
-		  */
+		  q1.enqueue(5);
+		  q1.enqueue(6);
+		  q1.enqueue(7);
 		  
+		  q1.display();
+		  //*/
 		  
+		  /*
 		  CircularQueue q1 = new CircularQueue(5);
 		  q1.enqueue(1);
 		  q1.enqueue(2);
@@ -46,6 +48,7 @@ public class Main {
 		  q1.enqueue(7);
 		  
 		  q1.display();
+		  */
 	}
 	
 	
